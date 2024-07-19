@@ -1,0 +1,186 @@
+<head>
+    <link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+    <body>
+
+    <div>
+      <nav class="navbar">
+      <h1>papzz shopping</h1>
+      <div class="navbar-links">
+          <p class="navbar-link"><a href=" ">home</a></p>
+          <p class="navbar-link"><a href=" ">collcetions</a></p>
+          <p class="navbar-link"><a href=" ">contact</a></p>
+  
+      </div>
+      <div class="navbar-menu-toggle" onclick="showNavbar()">
+          <i class="fa-solid fa-magnifying-glass" ></i>
+      </div>
+  </nav>
+  
+    <!--product  -->
+    <div class="product-section">
+      <from class="product-search">
+  <input type="text" id="search" placeholder="search">
+  <i class="fa-solid fa-magnifying-glass"></i>
+      </from>
+  
+  <div class="products" id="products">
+    <div class="product-box">
+      <img src="https://source.unsplash.com/random/250x250/?black shirt">
+      <p class="p-list">black shirt</p>
+  </div>
+  <div class="product-box">
+    <img src="https://source.unsplash.com/random/250x250/?white shirt">
+    <p class="p-list">white shirt</p>
+</div>
+<div class="product-box">
+    <img src="https://source.unsplash.com/random/250x250/? formal shirt">
+    <p class="p-list"> formal shirt</p>
+</div>
+<div class="product-box">
+    <img src="https://source.unsplash.com/random/250x250/?printed t-shirt">
+    <p class="p-list">sharee</p>
+</div>
+<div class="product-box">
+    <img src="https://source.unsplash.com/random/250x250/?genus shirt">
+    <p class="p-list">shirt</p>
+</div>
+<div class="product-box">
+    <img src="https://source.unsplash.com/random/250x250/?shoes">
+    <p class="p-list">shoes</p>
+</div>
+<div class="product-box">
+    <img src="https://source.unsplash.com/random/250x250/?blue shirt">
+    <p class="p-list">kurthi</p>
+</div>
+<div class="product-box">
+    <img src="https://source.unsplash.com/random/250x250/?pink shirt">
+    <p class="p-list">genus</p>
+</div>
+
+</div>
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h2 class="heading">papzz</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet quisquam voluptatem culpa, ullam amet autem possimus esse voluptates temporibus repudiandae.</p>
+           <div class="footer-icon-condainer">
+            <i class="fa-brands fa-instagram" ></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i><br>
+
+           </div>
+            </div>
+        </div><br>
+        <p>@2024 papzz.com</p><br>
+        <p>contact:9382902899</p><br>
+        <script src="search.html"></script>
+    
+  </div>
+
+  
+  
+</body>
+  
+  <style>
+  .navbar{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .navbar-links{
+      display: flex;
+      column-gap: 20px;
+  }
+  .navbar-links a{
+      text-decoration: none;
+      color: #1d232c;
+  }
+  .navbar-links:hover{
+      text-decoration: underline;
+  
+  }
+  
+  .navbar-menu{
+      display: none;
+  }
+  .footer{
+      margin-top: 20px;
+      padding: 40px;
+      background-color: #1d232c;
+      color: white;
+  }
+  .footer-icon-container{
+      color: white;
+  }
+  .product-seaction{
+    margin-top: 20px;
+}
+.product-search{
+    width: 80%;
+    border: solid black 2px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+}
+.product-search input{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+
+}
+.product-search input:focus{
+outline: none;
+
+}
+.products{
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.product-box{
+    text-align: center;
+    flex-basis: 20%;
+
+}
+.product-box img{
+    border-radius: 10px;
+}
+  
+  </style>
+
+  <script>
+    var productcontainer = document.getElementById("products")
+    var search = document.getElementById("search")
+    var productlist = productcontainer.querySelectorAll("div")
+  search.addEventListener("keyup",function(){
+    console.log(event.target.value.toUpperCase());
+    var key = event.target.value.toUpperCase()
+    
+    for(count=0;count<productlist.length;count=count+1){
+        var productname = productlist[count].getElementsByTagName("p")
+        // .getElementsByClassName("p-list").textcontent
+        console.log("pro"+productname[0].innerHTML);
+        let pList = productname[0].innerHTML;
+        let capList = pList.toUpperCase()
+if(capList.indexOf(key)<0){
+    productlist[count].style.display="none"
+    // break
+
+}
+else{
+    productlist[count].style.display="block"
+}
+    }
+  })
+  </script>
